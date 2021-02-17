@@ -1,0 +1,14 @@
+<ul>
+  <% @restaurants.each do |resto| %>
+  <li>
+    <h2>
+      <%= resto.name %>
+    </h2>
+    <p>
+      <%= resto.created_at %>
+    </p>
+    <%= link_to 'delete', destroy_restaurant_path(resto), method: :delete %>
+
+  </li>
+  <% end %>
+</ul>
