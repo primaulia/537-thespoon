@@ -4,6 +4,14 @@ Rails.application.routes.draw do
   root to: 'restaurants#index'
 
   resources :restaurants do
+    collection do
+      get 'featured'
+    end
+
+    member do
+      get 'chef'
+    end
+
     resources :reviews, only: [:index, :new, :create]
   end
 
