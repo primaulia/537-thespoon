@@ -4,3 +4,6 @@
 <p>
   <%= @restaurant.created_at %>
 </p>
+
+<%= link_to 'Edit this restaurant', edit_restaurant_path(@restaurant) %><br>
+<%= link_to "Find out more about #{@restaurant.chef_name}", chef_restaurant_path(@restaurant) %>

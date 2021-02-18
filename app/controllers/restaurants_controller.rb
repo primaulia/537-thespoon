@@ -3,6 +3,10 @@ class RestaurantsController < ApplicationController
   # before_action :<method_name>, except: [:<action1>]
   before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
 
+  def featured
+    # up to you
+    @featured_restaurants = Restaurant.where(rating: 5)
+  end
 
   def index
     @restaurants = Restaurant.all

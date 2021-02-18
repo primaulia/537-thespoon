@@ -1,0 +1,6 @@
+<h2>Create new review here</h2>
+
+<%= simple_form_for [@restaurant, @new_review] do |f| %>
+  <%= f.input :content %>
+  <%= f.button :submit, class: 'btn btn-primary btn-block' %>
+<% end %>

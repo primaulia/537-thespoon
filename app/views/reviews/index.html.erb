@@ -1,0 +1,10 @@
+<ul>
+  <% @reviews.each do |review| %>
+  <li><%= review.content %></li>
+  <% end %>
+</ul>
+
+<%= simple_form_for [@restaurant, @new_review] do |f| %>
+  <%= f.input :content %>
+  <%= f.button :submit, class: 'btn btn-primary btn-block' %>
+<% end %>

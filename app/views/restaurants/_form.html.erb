@@ -1,29 +1,8 @@
-<ul>
-<% if resto.errors %>
-  <% resto.errors.full_messages.each do |message| %>
-  <li><%= message %></li>
-  <% end %>
-<% end %>
-</ul>
+<%= simple_form_for restaurant do |f|%>
+  <%= f.input :name %>
+  <%= f.input :rating %>
+  <%= f.input :address %>
+  <%= f.input :chef_name %>
 
-<%= form_for resto do |f|%>
-  <div>
-    <%= f.label :name %>
-    <%= f.text_field :name, value: resto.name %>
-  </div>
-  <div>
-    <%= f.label :rating %>
-    <%= f.text_field :rating, value: resto.rating %>
-  </div>
-  <div>
-    <%= f.label :address %>
-    <%= f.text_field :address, value: resto.address %>
-  </div>
-  <div>
-    <%= f.label :chef_name %>
-    <%= f.text_field :chef_name, value: resto.chef_name %>
-  </div>
-
-
-  <%= f.submit %>
+  <%= f.button :submit, class: 'btn btn-primary' %>
 <% end %>
